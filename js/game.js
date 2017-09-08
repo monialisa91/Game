@@ -34,14 +34,13 @@ function newGame() {
 
 }
 
-function endOfTheGame (playerScore, computerScore, playerName) {
+function endOfTheGame(playerScore, computerScore, playerName) {
 	if(playerScore == 3) {
 		alert('The end of the game. ' + playerName + ' is the winner.');
 		gameState = 'ended';
 		setGameElements();
 	}
 	else if(computerScore == 3) {
-		setGamePoints();
 		alert('The end of the game. Computer is the winner.');
 		gameState = 'ended';
 		setGameElements();
@@ -71,9 +70,6 @@ function checkRoundWinner(playerPick, computerPick){
 	}
 	
 	setGamePoints();
-	// ALERTS HERE
-	alert(player.score);
-	alert(computer.score);
 	endOfTheGame(player.score, computer.score, player.name);
 }
 
@@ -81,7 +77,7 @@ function checkRoundWinner(playerPick, computerPick){
 
 function getComputerPick() {
 	var possiblePicks = ['rock', 'paper', 'scissors'];
-	return possiblePicks[Math.floor(Math.random()*3)];
+	return possiblePicks[Math.floor(Math.random() * 3)];
 }
 
 function playerPick(playerPick){
